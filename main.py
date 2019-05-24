@@ -19,7 +19,6 @@ class MainWindow(QMainWindow):
     orange_grade = ''
     img_pixmap = ''
 
-
     def __init__(self, parent=None):
         QtWidgets.QWidget.__init__(self, parent)
         #self.ui.setStyleSheet(open("style.qss", "r").read())
@@ -99,10 +98,8 @@ class MainWindow(QMainWindow):
         # ret, thresh = cv2.threshold(gray, 127, 255, 3)
         result_2, contours, hierachy = cv2.findContours(gray,cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
         #cv2.drawContours(result, contours, -1, (0, 255, 0), 1). 
-        
         specimen_area_1 = 0
         specimen_area_2 = 0
-        
         # Loop through the contours found in the image.
         for c in contours:
             # If contour area is big enough, then continue with loop.
